@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name=“robots” content=“noindex,nofollow”>
+  <title>Maxim Kulikov — Lead Engineer, PHP Backend Developer</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+  <link rel="manifest" href="/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- IDE menu -->
+  <div class="ide-menu">
+    <div class="menu-item active" data-target="header">index.php</div>
+    <div class="menu-item"           data-target="about">config.php</div>
+    <div class="menu-item"           data-target="projects">portfolio.php</div>
+    <div class="menu-item"           data-target="stack">stack.php</div>
+    <div class="menu-item"           data-target="learning">learning.go</div>
+    <div class="menu-item"           data-target="contacts">contacts.php</div>
+    <div class="close-btn">×</div>
+  </div>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">EXPLORER</div>
+      <ul class="file-list">
+        <li><a href="#header"    class="file-link active"><span class="file-icon">🐘</span> index.php</a></li>
+        <li><a href="#about"     class="file-link"><span class="file-icon">🔧</span> config.php</a></li>
+        <li><a href="#projects"  class="file-link"><span class="file-icon">💼</span> portfolio.php</a></li>
+        <li><a href="#stack"     class="file-link"><span class="file-icon">📦</span> stack.php</a></li>
+        <li><a href="#learning"  class="file-link"><span class="file-icon">🐹</span> learning.go</a></li>
+        <li><a href="#contacts"  class="file-link"><span class="file-icon">📧</span> contacts.php</a></li>
+      </ul>
+    </aside>
+
+    <!-- Основная область -->
+    <main class="editor-area">
+      <div class="code-content">
+        <!-- HEADER -->
+        <section id="header" class="code-section">
+          <div class="code-line"><span class="php-tag">&lt;?php</span></div>
+          <div class="code-line"><span class="comment">// Developer information</span></div>
+          <div class="code-line"><span class="variable">$developer</span> = [</div>
+          <div class="code-line indent1">  <span class="string">'name'</span>     =&gt; <span class="string">'Maxim Kulikov'</span>,</div>
+          <div class="code-line indent1">  <span class="string">'position'</span> =&gt; <span class="string">'PHP Backend Developer'</span>,</div>
+          <div class="code-line indent1">  <span class="string">'experience'</span> =&gt; <span class="number">5</span>,</div>
+          <div class="code-line indent1">  <span class="string">'location'</span> =&gt; <span class="string">'Moscow, Russia'</span>,</div>
+          <div class="code-line indent1">  <span class="string">'role'</span>     =&gt; <span class="string">'Team Lead'</span></div>
+          <div class="code-line">];</div>
+          <div class="code-line"><span class="php-tag">?&gt;</span></div>
+        </section>
+
+        <br>
+        <!-- ABOUT -->
+        <section id="about" class="code-section">
+          <div class="code-line"><span class="comment">// Function to get information about me</span></div>
+          <div class="code-line"><span class="keyword">function</span> <span class="function">getAboutInfo</span>(): <span class="type">array</span></div>
+          <div class="code-line">{</div>
+          <div class="code-line indent1">  <span class="keyword">return</span> [</div>
+          <div class="code-line indent2">    <span class="string">'description'</span>        =&gt; <span class="string">'PHP backend developer with 5+ years of experience building web applications and APIs'</span>,</div>
+          <div class="code-line indent2">    <span class="string">'specialization'</span>     =&gt; [<span class="string">'REST API'</span>, <span class="string">'Laravel'</span>, <span class="string">'Team management'</span>],</div>
+          <div class="code-line indent2">    <span class="string">'currently_learning'</span> =&gt; <span class="string">'Go (Golang)'</span>,</div>
+          <div class="code-line indent2">    <span class="string">'industries'</span>         =&gt; [<span class="string">'E-commerce'</span>, <span class="string">'Engineering'</span>, <span class="string">'SaaS'</span>],</div>
+          <div class="code-line indent2">    <span class="string">'education'</span>          =&gt; [</div>
+
+            <div class="code-line indent3">      [</div>
+              <div class="code-line indent4">        <span class="string">'degree_level'</span>     =&gt; <span class="string">'Business Education (2022)'</span>,</div>
+              <div class="code-line indent4">        <span class="string">'institution'</span>    =&gt; <span class="string">'Plekhanov Russian University of Economics, Moscow'</span>,</div>
+              <div class="code-line indent4">        <span class="string">'program'</span>      =&gt; <span class="string">'Master of Business Administration (MBA)'</span>,</div>
+              <div class="code-line indent4">        <span class="string">'specialization'</span> =&gt; <span class="string">'Internet Marketing & E-Commerce'</span></div>
+            <div class="code-line indent3">      ],</div>
+
+            <div class="code-line indent3">      [</div>
+              <div class="code-line indent4">        <span class="string">'degree_level'</span>     =&gt; <span class="string">'Specialist Degree in Engineering (2009)'</span>,</div>
+              <div class="code-line indent4">        <span class="string">'institution'</span>    =&gt; <span class="string">'Moscow State University of Geodesy and Cartography (MIIGAiK), Moscow'</span>,</div>
+              <div class="code-line indent4">        <span class="string">'field_of_study'</span>      =&gt; <span class="string">'Applied Cosmonautics and Photogrammetry'</span>,</div>
+              <div class="code-line indent4">        <span class="string">'specialization'</span> =&gt; <span class="string">'Information and Telecommunications Systems and Networks'</span></div>
+            <div class="code-line indent3">      ],</div>
+
+          <div class="code-line indent2">  ]</div>
+          <div class="code-line indent1">  ];</div>
+          <div class="code-line">}</div>
+        </section>
+
+        <br>
+        <!-- PROJECTS -->
+        <section id="projects" class="code-section">
+          <div class="code-line"><span class="comment">// Work experience and projects</span></div>
+          <div class="code-line"><span class="keyword">class</span> <span class="class">WorkExperience</span></div>
+          <div class="code-line">{</div>
+          <div class="code-line indent1">  <span class="keyword">public function</span> <span class="function">getProjects</span>(): <span class="type">array</span></div>
+          <div class="code-line indent1">  {</div>
+          <div class="code-line indent2">    <span class="keyword">return</span> [</div>
+
+          <div class="code-line indent3">      [</div>
+          <div class="code-line indent4">        <span class="string">'company'</span>     =&gt; <span class="string">'ZiP Service'</span>,</div>
+          <div class="code-line indent4">        <span class="string">'position'</span>    =&gt; <span class="string">'PHP Developer & Team Lead'</span>,</div>
+          <div class="code-line indent4">        <span class="string">'period'</span>      =&gt; <span class="string">'2020 — present'</span>,</div>
+          <div class="code-line indent4">        <span class="string">'technologies'</span> =&gt; [<span class="string">'PHP 8.3'</span>, <span class="string">'Laravel 10'</span>, <span class="string">'MariaDB'</span>]</div>
+          <div class="code-line indent3">      ],</div>
+
+          <div class="code-line indent3">      [</div>
+          <div class="code-line indent4">        <span class="string">'company'</span>     =&gt; <span class="string">'Opten Limited'</span>,</div>
+          <div class="code-line indent4">        <span class="string">'position'</span>    =&gt; <span class="string">'Lead Engineer'</span>,</div>
+          <div class="code-line indent4">        <span class="string">'period'</span>      =&gt; <span class="string">'2008 — 2025'</span>,</div>
+          <div class="code-line indent4">        <span class="string">'technologies'</span> =&gt; [<span class="string">'C++'</span>, <span class="string">'C#'</span>, <span class="string">'VBA for Microstation'</span>]</div>
+          <div class="code-line indent3">      ],</div>
+
+          <div class="code-line indent3">      [</div>
+          <div class="code-line indent4">        <span class="string">'company'</span>     =&gt; <span class="string">'Poliaspect'</span>,</div>
+          <div class="code-line indent4">        <span class="string">'position'</span>    =&gt; <span class="string">'System Administrator'</span>,</div>
+          <div class="code-line indent4">        <span class="string">'period'</span>      =&gt; <span class="string">'2007 — 2008'</span>,</div>
+          <div class="code-line indent4">        <span class="string">'technologies'</span> =&gt; [<span class="string">'PHP'</span>, <span class="string">'JavaScript'</span>, <span class="string">'Wordpress'</span>]</div>
+          <div class="code-line indent3">      ],</div>
+
+          <div class="code-line indent2">    ];</div>
+          <div class="code-line indent1">  }</div>
+          <div class="code-line">}</div>
+        </section>
+
+        <br>
+        <!-- STACK -->
+        <section id="stack" class="code-section">
+          <div class="code-line"><span class="comment">// Technology stack</span></div>
+          <div class="code-line"><span class="variable">$tech_stack</span> = [</div>
+          <div class="code-line indent1">  <span class="string">'languages'</span> =&gt; [</div>
+          <div class="code-line indent2">    <span class="string">'PHP'</span>        =&gt; <span class="string">'8.3 (primary)'</span>,</div>
+          <div class="code-line indent2">    <span class="string">'Go'</span>         =&gt; <span class="string">'learning'</span>,</div>
+          <div class="code-line indent2">    <span class="string">'JavaScript'</span> =&gt; <span class="string">'basic level'</span>,</div>
+          <div class="code-line indent2">    <span class="string">'SQL'</span>        =&gt; <span class="string">'intermediate'</span></div>
+          <div class="code-line indent1">  ],</div>
+          <div class="code-line indent1">  <span class="string">'frameworks'</span> =&gt; [<span class="string">'Laravel'</span>],</div>
+          <div class="code-line indent1">  <span class="string">'apis'</span> =&gt; [<span class="string">'REST API'</span>, <span class="string">'GraphQL'</span>],</div>
+          <div class="code-line indent1">  <span class="string">'servers'</span> =&gt; [<span class="string">'NGINX'</span>, <span class="string">'FrankenPHP'</span>],</div>
+          <div class="code-line indent1">  <span class="string">'databases'</span> =&gt; [<span class="string">'MariaDB'</span>, <span class="string">'MySQL'</span>, <span class="string">'Redis'</span>],</div>
+          <div class="code-line indent1">  <span class="string">'tools'</span>     =&gt; [<span class="string">'Docker'</span>, <span class="string">'Composer'</span>, <span class="string">'PHPUnit'</span>, <span class="string">'Git'</span>, <span class="string">'CI/CD'</span>],</div>
+          <div class="code-line indent1">  <span class="string">'admin_panels'</span> =&gt; [<span class="string">'Backpack'</span>, <span class="string">'Filament'</span>],</div>
+          <div class="code-line indent1">  <span class="string">'search'</span> =&gt; [<span class="string">'Meilisearch'</span>],</div>
+          <div class="code-line indent1">  <span class="string">'debugging_platforms'</span> =&gt; [<span class="string">'Sentry'</span>, <span class="string">'GlitchTip'</span>, <span class="string">'Clockwork'</span>, <span class="string">'Bugreggator'</span>],</div>
+          <div class="code-line indent1">  <span class="string">'frontend'</span> =&gt; [<span class="string">'Vue.js'</span>],</div>
+          <div class="code-line indent1">  <span class="string">'cms'</span> =&gt; [<span class="string">'Wordpress'</span>, <span class="string">'OpenCart'</span>, <span class="string">'MODX'</span>],</div>
+          <div class="code-line">];</div>
+        </section>
+
+        <br>
+        <!-- LEARNING -->
+        <section id="learning" class="code-section">
+          <div class="code-line"><span class="comment">// Learning Go (Golang)</span></div>
+          <div class="code-line"><span class="go-package">package</span> main</div>
+          <div class="code-line"></div>
+          <div class="code-line"><span class="go-import">import</span> <span class="string">"fmt"</span></div>
+          <div class="code-line"></div>
+          <div class="code-line"><span class="go-type">type</span> <span class="type">LearningProgress</span> <span class="keyword">struct</span> {</div>
+          <div class="code-line indent1">  <span class="string">Status</span>   <span class="type">string</span></div>
+          <div class="code-line indent1">  <span class="string">Progress</span> <span class="type">int</span></div>
+          <div class="code-line indent1">  <span class="string">NextGoal</span> <span class="type">string</span></div>
+          <div class="code-line">}</div>
+          <div class="code-line"></div>
+          <div class="code-line"><span class="go-func">func</span> <span class="function">main</span>() {</div>
+          <div class="code-line indent1">  <span class="variable">learning</span> := <span class="type">LearningProgress</span> {</div>
+          <div class="code-line indent2">    <span class="string">Status</span>:   <span class="string">"Actively studying Go"</span>,</div>
+          <div class="code-line indent2">    <span class="string">Progress</span>: <span class="number">35</span>, <span class="comment">// percentages</span></div>
+          <div class="code-line indent2">    <span class="string">NextGoal</span>: <span class="string">"Build a REST API with the Gin framework"</span>,</div>
+          <div class="code-line indent1">  }</div>
+          <div class="code-line indent1">  fmt.Printf(<span class="string">"🚀 %s (progress: %d%%)\n"</span>, learning.Status, learning.Progress)</div>
+          <div class="code-line">}</div>
+        </section>
+
+        <br>
+        <!-- CONTACTS -->
+        <section id="contacts" class="code-section">
+          <div class="code-line"><span class="comment">// Contact information</span></div>
+          <div class="code-line"><span class="variable">$contacts</span> = [</div>
+          <div class="code-line indent1">  <span class="string">'email'</span>    =&gt; <span class="string">'<a href="mailto:iam@coolycow.com" class="contact-link">iam@coolycow.com</a>'</span>,</div>
+          <div class="code-line indent1">  <span class="string">'github'</span>   =&gt; <span class="string">'<a href="https://github.com/coolycow" class="contact-link" target="_blank">github.com/coolycow</a>'</span>,</div>
+          <div class="code-line indent1">  <span class="string">'linkedin'</span> =&gt; <span class="string">'<a href="https://linkedin.com/in/maxim-kulikov" class="contact-link" target="_blank">linkedin.com/in/maxim-kulikov/</a>'</span>,</div>
+          <div class="code-line indent1">  <span class="string">'telegram'</span> =&gt; <span class="string">'<a href="https://t.me/coolycow" class="contact-link" target="_blank">@coolycow</a>'</span>,</div>
+          <div class="code-line indent1">  <span class="string">'website'</span>  =&gt; <span class="string">'<a href="https://coolycow.com" class="contact-link" target="_blank">coolycow.com</a>'</span></div>
+          <div class="code-line">];</div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Статус-бар -->
+  <div class="status-bar">
+    <div class="status-left">
+      <span class="status-item">UTF-8</span>
+      <span class="status-item">PHP 8.2</span>
+      <span class="status-item">Ln 1, Col 1</span>
+    </div>
+    <div class="status-right">
+      <span class="status-item">Laravel Ready</span>
+      <span class="status-item">🐘 PHP Team Lead</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
