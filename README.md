@@ -8,9 +8,6 @@
 * **PHP** - умею, ежедневно, люблю. От CMS до самописных систем;
 * **Python, Go** - учу, применяю, начинаю любить.
 
-### Мемы в телеге:
-[**Грузите эйрподсы бочками!**](https://t.me/seoblock)
-
 ### Мои контакты
 
 <a href="https://t.me/coolycow" style="display: inline-flex; align-items: center; line-height: 25px; text-decoration: none;">
@@ -20,3 +17,10 @@
 
 ### Что использую в работе
 <img width="25px" loading="lazy" src="./assets/ubuntu.png" alt="Ubuntu" /> <img width="25px" loading="lazy" src="./assets/docker.png" alt="Docker" /> <img width="25px" loading="lazy" src="./assets/php.png" alt="PHP" /> <img width="25px" loading="lazy" src="./assets/golang.png" alt="Go" /> <img width="25px" loading="lazy" src="./assets/intellij_phpstorm.png" alt="PHPStorm" /> <img width="25px" loading="lazy" src="./assets/intellij_pycharm.png" alt="PyCharm" /> <img width="25px" loading="lazy" src="./assets/file_type_vscode.png" alt="VS Code" /> <img width="25px" loading="lazy" src="./assets/file_type_git.png" alt="Git" /> <img width="25px" loading="lazy" src="./assets/dbeaver.png" alt="DBeaver" /> <img width="25px" loading="lazy" src="./assets/mariadb.png" alt="MariaDB" /> <img width="25px" loading="lazy" src="./assets/postgresql.png" alt="PostgreSQL" /> <img width="25px" loading="lazy" src="./assets/redis.png" alt="Redis" /> <img width="25px" loading="lazy" src="./assets/file_type_sentry.png" alt="Ubuntu" />
+
+### Не про работу
+Люблю сноубординг и горные лыжи, с которых начал, променял на доску, но вернулся и продолжил обучение.  
+Лес, ёлки, горы, снег, лёд.
+
+### Мемы в телеге
+[**Грузите эйрподсы бочками!**](https://t.me/seoblock)
