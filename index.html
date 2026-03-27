@@ -3,220 +3,478 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name=“robots” content=“noindex,nofollow”>
-  <title>Maxim Kulikov — Lead Engineer, PHP Backend Developer</title>
-  <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-  <link rel="manifest" href="/icons/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="robots" content="noindex,nofollow" />
+  <meta
+    name="description"
+    id="site-description"
+    content="Максим Куликов — PHP backend-разработчик и тимлид. REST API, Laravel, команда."
+  />
+  <title>Максим Куликов — PHP backend, тимлид</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+  <link rel="manifest" href="/icons/manifest.json" />
+  <meta name="msapplication-TileColor" content="#f4f2ef" />
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#f4f2ef" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet"
   />
+  <script>
+    (function () {
+      var lang = "ru";
+      try {
+        var s = localStorage.getItem("lang");
+        if (s === "en" || s === "ru") lang = s;
+        else {
+          var n = (navigator.language || "").toLowerCase();
+          lang = n.indexOf("ru") === 0 ? "ru" : "en";
+        }
+      } catch (e) {
+        var n2 = (navigator.language || "").toLowerCase();
+        lang = n2.indexOf("ru") === 0 ? "ru" : "en";
+      }
+      document.documentElement.lang = lang;
+      if (lang === "en") {
+        document.title = "Maxim Kulikov — PHP backend, team lead";
+        var m = document.querySelector('meta[name="description"]');
+        if (m)
+          m.setAttribute(
+            "content",
+            "Maxim Kulikov — PHP backend developer and team lead. REST API, Laravel, and team leadership."
+          );
+      }
+    })();
+  </script>
 </head>
 <body>
-  <!-- IDE menu -->
-  <div class="ide-menu">
-    <div class="menu-item active" data-target="header">index.php</div>
-    <div class="menu-item"           data-target="about">config.php</div>
-    <div class="menu-item"           data-target="projects">portfolio.php</div>
-    <div class="menu-item"           data-target="stack">stack.php</div>
-    <div class="menu-item"           data-target="learning">learning.go</div>
-    <div class="menu-item"           data-target="contacts">contacts.php</div>
-    <div class="close-btn">×</div>
-  </div>
+  <a href="#main" class="skip-link">
+    <span class="i18n-inline" data-lang="ru">К основному содержимому</span>
+    <span class="i18n-inline" data-lang="en">Skip to main content</span>
+  </a>
 
-  <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-header">EXPLORER</div>
-      <ul class="file-list">
-        <li><a href="#header"    class="file-link active"><span class="file-icon">🐘</span> index.php</a></li>
-        <li><a href="#about"     class="file-link"><span class="file-icon">🔧</span> config.php</a></li>
-        <li><a href="#projects"  class="file-link"><span class="file-icon">💼</span> portfolio.php</a></li>
-        <li><a href="#stack"     class="file-link"><span class="file-icon">📦</span> stack.php</a></li>
-        <li><a href="#learning"  class="file-link"><span class="file-icon">🐹</span> learning.go</a></li>
-        <li><a href="#contacts"  class="file-link"><span class="file-icon">📧</span> contacts.php</a></li>
-      </ul>
-    </aside>
-
-    <!-- Основная область -->
-    <main class="editor-area">
-      <div class="code-content">
-        <!-- HEADER -->
-        <section id="header" class="code-section">
-          <div class="code-line"><span class="php-tag">&lt;?php</span></div>
-          <div class="code-line"><span class="comment">// Developer information</span></div>
-          <div class="code-line"><span class="variable">$developer</span> = [</div>
-          <div class="code-line indent1">  <span class="string">'name'</span>     =&gt; <span class="string">'Maxim Kulikov'</span>,</div>
-          <div class="code-line indent1">  <span class="string">'position'</span> =&gt; <span class="string">'PHP Backend Developer'</span>,</div>
-          <div class="code-line indent1">  <span class="string">'experience'</span> =&gt; <span class="number">5</span>,</div>
-          <div class="code-line indent1">  <span class="string">'location'</span> =&gt; <span class="string">'Moscow, Russia'</span>,</div>
-          <div class="code-line indent1">  <span class="string">'role'</span>     =&gt; <span class="string">'Team Lead'</span></div>
-          <div class="code-line">];</div>
-          <div class="code-line"><span class="php-tag">?&gt;</span></div>
-        </section>
-
-        <br>
-        <!-- ABOUT -->
-        <section id="about" class="code-section">
-          <div class="code-line"><span class="comment">// Function to get information about me</span></div>
-          <div class="code-line"><span class="keyword">function</span> <span class="function">getAboutInfo</span>(): <span class="type">array</span></div>
-          <div class="code-line">{</div>
-          <div class="code-line indent1">  <span class="keyword">return</span> [</div>
-          <div class="code-line indent2">    <span class="string">'description'</span>        =&gt; <span class="string">'PHP backend developer with 5+ years of experience building web applications and APIs'</span>,</div>
-          <div class="code-line indent2">    <span class="string">'specialization'</span>     =&gt; [<span class="string">'REST API'</span>, <span class="string">'Laravel'</span>, <span class="string">'Team management'</span>],</div>
-          <div class="code-line indent2">    <span class="string">'currently_learning'</span> =&gt; <span class="string">'Go (Golang)'</span>,</div>
-          <div class="code-line indent2">    <span class="string">'industries'</span>         =&gt; [<span class="string">'E-commerce'</span>, <span class="string">'Engineering'</span>, <span class="string">'SaaS'</span>],</div>
-          <div class="code-line indent2">    <span class="string">'education'</span>          =&gt; [</div>
-
-            <div class="code-line indent3">      [</div>
-              <div class="code-line indent4">        <span class="string">'degree_level'</span>     =&gt; <span class="string">'Business Education (2022)'</span>,</div>
-              <div class="code-line indent4">        <span class="string">'institution'</span>    =&gt; <span class="string">'Plekhanov Russian University of Economics, Moscow'</span>,</div>
-              <div class="code-line indent4">        <span class="string">'program'</span>      =&gt; <span class="string">'Master of Business Administration (MBA)'</span>,</div>
-              <div class="code-line indent4">        <span class="string">'specialization'</span> =&gt; <span class="string">'Internet Marketing & E-Commerce'</span></div>
-            <div class="code-line indent3">      ],</div>
-
-            <div class="code-line indent3">      [</div>
-              <div class="code-line indent4">        <span class="string">'degree_level'</span>     =&gt; <span class="string">'Specialist Degree in Engineering (2009)'</span>,</div>
-              <div class="code-line indent4">        <span class="string">'institution'</span>    =&gt; <span class="string">'Moscow State University of Geodesy and Cartography (MIIGAiK), Moscow'</span>,</div>
-              <div class="code-line indent4">        <span class="string">'field_of_study'</span>      =&gt; <span class="string">'Applied Cosmonautics and Photogrammetry'</span>,</div>
-              <div class="code-line indent4">        <span class="string">'specialization'</span> =&gt; <span class="string">'Information and Telecommunications Systems and Networks'</span></div>
-            <div class="code-line indent3">      ],</div>
-
-          <div class="code-line indent2">  ]</div>
-          <div class="code-line indent1">  ];</div>
-          <div class="code-line">}</div>
-        </section>
-
-        <br>
-        <!-- PROJECTS -->
-        <section id="projects" class="code-section">
-          <div class="code-line"><span class="comment">// Work experience and projects</span></div>
-          <div class="code-line"><span class="keyword">class</span> <span class="class">WorkExperience</span></div>
-          <div class="code-line">{</div>
-          <div class="code-line indent1">  <span class="keyword">public function</span> <span class="function">getProjects</span>(): <span class="type">array</span></div>
-          <div class="code-line indent1">  {</div>
-          <div class="code-line indent2">    <span class="keyword">return</span> [</div>
-
-          <div class="code-line indent3">      [</div>
-          <div class="code-line indent4">        <span class="string">'company'</span>     =&gt; <span class="string">'ZiP Service'</span>,</div>
-          <div class="code-line indent4">        <span class="string">'position'</span>    =&gt; <span class="string">'PHP Developer & Team Lead'</span>,</div>
-          <div class="code-line indent4">        <span class="string">'period'</span>      =&gt; <span class="string">'2020 — present'</span>,</div>
-          <div class="code-line indent4">        <span class="string">'technologies'</span> =&gt; [<span class="string">'PHP 8.3'</span>, <span class="string">'Laravel 10'</span>, <span class="string">'MariaDB'</span>]</div>
-          <div class="code-line indent3">      ],</div>
-
-          <div class="code-line indent3">      [</div>
-          <div class="code-line indent4">        <span class="string">'company'</span>     =&gt; <span class="string">'Opten Limited'</span>,</div>
-          <div class="code-line indent4">        <span class="string">'position'</span>    =&gt; <span class="string">'Lead Engineer'</span>,</div>
-          <div class="code-line indent4">        <span class="string">'period'</span>      =&gt; <span class="string">'2008 — 2025'</span>,</div>
-          <div class="code-line indent4">        <span class="string">'technologies'</span> =&gt; [<span class="string">'C++'</span>, <span class="string">'C#'</span>, <span class="string">'VBA for Microstation'</span>]</div>
-          <div class="code-line indent3">      ],</div>
-
-          <div class="code-line indent3">      [</div>
-          <div class="code-line indent4">        <span class="string">'company'</span>     =&gt; <span class="string">'Poliaspect'</span>,</div>
-          <div class="code-line indent4">        <span class="string">'position'</span>    =&gt; <span class="string">'System Administrator'</span>,</div>
-          <div class="code-line indent4">        <span class="string">'period'</span>      =&gt; <span class="string">'2007 — 2008'</span>,</div>
-          <div class="code-line indent4">        <span class="string">'technologies'</span> =&gt; [<span class="string">'PHP'</span>, <span class="string">'JavaScript'</span>, <span class="string">'Wordpress'</span>]</div>
-          <div class="code-line indent3">      ],</div>
-
-          <div class="code-line indent2">    ];</div>
-          <div class="code-line indent1">  }</div>
-          <div class="code-line">}</div>
-        </section>
-
-        <br>
-        <!-- STACK -->
-        <section id="stack" class="code-section">
-          <div class="code-line"><span class="comment">// Technology stack</span></div>
-          <div class="code-line"><span class="variable">$tech_stack</span> = [</div>
-          <div class="code-line indent1">  <span class="string">'languages'</span> =&gt; [</div>
-          <div class="code-line indent2">    <span class="string">'PHP'</span>        =&gt; <span class="string">'8.3 (primary)'</span>,</div>
-          <div class="code-line indent2">    <span class="string">'Go'</span>         =&gt; <span class="string">'learning'</span>,</div>
-          <div class="code-line indent2">    <span class="string">'JavaScript'</span> =&gt; <span class="string">'basic level'</span>,</div>
-          <div class="code-line indent2">    <span class="string">'SQL'</span>        =&gt; <span class="string">'intermediate'</span></div>
-          <div class="code-line indent1">  ],</div>
-          <div class="code-line indent1">  <span class="string">'frameworks'</span> =&gt; [<span class="string">'Laravel'</span>],</div>
-          <div class="code-line indent1">  <span class="string">'apis'</span> =&gt; [<span class="string">'REST API'</span>, <span class="string">'GraphQL'</span>],</div>
-          <div class="code-line indent1">  <span class="string">'servers'</span> =&gt; [<span class="string">'NGINX'</span>, <span class="string">'FrankenPHP'</span>],</div>
-          <div class="code-line indent1">  <span class="string">'databases'</span> =&gt; [<span class="string">'MariaDB'</span>, <span class="string">'MySQL'</span>, <span class="string">'Redis'</span>],</div>
-          <div class="code-line indent1">  <span class="string">'tools'</span>     =&gt; [<span class="string">'Docker'</span>, <span class="string">'Composer'</span>, <span class="string">'PHPUnit'</span>, <span class="string">'Git'</span>, <span class="string">'CI/CD'</span>],</div>
-          <div class="code-line indent1">  <span class="string">'admin_panels'</span> =&gt; [<span class="string">'Backpack'</span>, <span class="string">'Filament'</span>],</div>
-          <div class="code-line indent1">  <span class="string">'search'</span> =&gt; [<span class="string">'Meilisearch'</span>],</div>
-          <div class="code-line indent1">  <span class="string">'debugging_platforms'</span> =&gt; [<span class="string">'Sentry'</span>, <span class="string">'GlitchTip'</span>, <span class="string">'Clockwork'</span>, <span class="string">'Bugreggator'</span>],</div>
-          <div class="code-line indent1">  <span class="string">'frontend'</span> =&gt; [<span class="string">'Vue.js'</span>],</div>
-          <div class="code-line indent1">  <span class="string">'cms'</span> =&gt; [<span class="string">'Wordpress'</span>, <span class="string">'OpenCart'</span>, <span class="string">'MODX'</span>],</div>
-          <div class="code-line">];</div>
-        </section>
-
-        <br>
-        <!-- LEARNING -->
-        <section id="learning" class="code-section">
-          <div class="code-line"><span class="comment">// Learning Go (Golang)</span></div>
-          <div class="code-line"><span class="go-package">package</span> main</div>
-          <div class="code-line"></div>
-          <div class="code-line"><span class="go-import">import</span> <span class="string">"fmt"</span></div>
-          <div class="code-line"></div>
-          <div class="code-line"><span class="go-type">type</span> <span class="type">LearningProgress</span> <span class="keyword">struct</span> {</div>
-          <div class="code-line indent1">  <span class="string">Status</span>   <span class="type">string</span></div>
-          <div class="code-line indent1">  <span class="string">Progress</span> <span class="type">int</span></div>
-          <div class="code-line indent1">  <span class="string">NextGoal</span> <span class="type">string</span></div>
-          <div class="code-line">}</div>
-          <div class="code-line"></div>
-          <div class="code-line"><span class="go-func">func</span> <span class="function">main</span>() {</div>
-          <div class="code-line indent1">  <span class="variable">learning</span> := <span class="type">LearningProgress</span> {</div>
-          <div class="code-line indent2">    <span class="string">Status</span>:   <span class="string">"Actively studying Go"</span>,</div>
-          <div class="code-line indent2">    <span class="string">Progress</span>: <span class="number">35</span>, <span class="comment">// percentages</span></div>
-          <div class="code-line indent2">    <span class="string">NextGoal</span>: <span class="string">"Build a REST API with the Gin framework"</span>,</div>
-          <div class="code-line indent1">  }</div>
-          <div class="code-line indent1">  fmt.Printf(<span class="string">"🚀 %s (progress: %d%%)\n"</span>, learning.Status, learning.Progress)</div>
-          <div class="code-line">}</div>
-        </section>
-
-        <br>
-        <!-- CONTACTS -->
-        <section id="contacts" class="code-section">
-          <div class="code-line"><span class="comment">// Contact information</span></div>
-          <div class="code-line"><span class="variable">$contacts</span> = [</div>
-          <div class="code-line indent1">  <span class="string">'email'</span>    =&gt; <span class="string">'<a href="mailto:iam@coolycow.com" class="contact-link">iam@coolycow.com</a>'</span>,</div>
-          <div class="code-line indent1">  <span class="string">'github'</span>   =&gt; <span class="string">'<a href="https://github.com/coolycow" class="contact-link" target="_blank">github.com/coolycow</a>'</span>,</div>
-          <div class="code-line indent1">  <span class="string">'linkedin'</span> =&gt; <span class="string">'<a href="https://linkedin.com/in/maxim-kulikov" class="contact-link" target="_blank">linkedin.com/in/maxim-kulikov/</a>'</span>,</div>
-          <div class="code-line indent1">  <span class="string">'telegram'</span> =&gt; <span class="string">'<a href="https://t.me/coolycow" class="contact-link" target="_blank">@coolycow</a>'</span>,</div>
-          <div class="code-line indent1">  <span class="string">'website'</span>  =&gt; <span class="string">'<a href="https://coolycow.com" class="contact-link" target="_blank">coolycow.com</a>'</span></div>
-          <div class="code-line">];</div>
-        </section>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="#hero" aria-label="Maxim Kulikov — home">
+        <span class="site-logo__mono">~/</span><span class="site-logo__name">maxim-kulikov</span>
+      </a>
+      <nav class="site-nav" aria-label="Section navigation">
+        <ul class="site-nav__list">
+          <li>
+            <a class="site-nav__link" href="#about"
+              ><span class="i18n-inline" data-lang="ru">Обо мне</span><span class="i18n-inline" data-lang="en">About</span></a
+            >
+          </li>
+          <li>
+            <a class="site-nav__link" href="#experience"
+              ><span class="i18n-inline" data-lang="ru">Опыт</span><span class="i18n-inline" data-lang="en">Experience</span></a
+            >
+          </li>
+          <li>
+            <a class="site-nav__link" href="#stack"
+              ><span class="i18n-inline" data-lang="ru">Стек</span><span class="i18n-inline" data-lang="en">Stack</span></a
+            >
+          </li>
+          <li>
+            <a class="site-nav__link" href="#learning"
+              ><span class="i18n-inline" data-lang="ru">Обучение</span><span class="i18n-inline" data-lang="en">Learning</span></a
+            >
+          </li>
+          <li>
+            <a class="site-nav__link" href="#contacts"
+              ><span class="i18n-inline" data-lang="ru">Контакты</span><span class="i18n-inline" data-lang="en">Contact</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-switch__btn" data-set-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" class="lang-switch__btn" data-set-lang="en" aria-pressed="false">EN</button>
       </div>
-    </main>
-  </div>
+    </div>
+  </header>
 
-  <!-- Статус-бар -->
-  <div class="status-bar">
-    <div class="status-left">
-      <span class="status-item">UTF-8</span>
-      <span class="status-item">PHP 8.2</span>
-      <span class="status-item">Ln 1, Col 1</span>
-    </div>
-    <div class="status-right">
-      <span class="status-item">Laravel Ready</span>
-      <span class="status-item">🐘 PHP Team Lead</span>
-    </div>
-  </div>
+  <main id="main">
+    <section id="hero" class="hero section" aria-labelledby="hero-heading">
+      <div class="section__inner">
+        <p class="hero__eyebrow mono">PHP · Backend · Team Lead</p>
+        <h1 id="hero-heading" class="hero__title">Maxim Kulikov</h1>
+        <p class="hero__lead">
+          <span class="i18n-block" data-lang="ru">Backend-разработчик на PHP, тимлид, ведущий инженер. Более 10 лет в веб-приложениях и API.</span>
+          <span class="i18n-block" data-lang="en">PHP backend developer and team lead, lead engineer. 10+ years building web applications and APIs.</span>
+        </p>
+        <ul class="hero__meta">
+          <li>
+            <span class="i18n-inline" data-lang="ru">Москва, Россия</span>
+            <span class="i18n-inline" data-lang="en">Moscow, Russia</span>
+          </li>
+          <li>
+            <span class="i18n-inline" data-lang="ru">10+ лет в разработке</span>
+            <span class="i18n-inline" data-lang="en">10+ years in development</span>
+          </li>
+          <li>
+            <span class="i18n-inline" data-lang="ru">REST API · Laravel · Team Lead</span>
+            <span class="i18n-inline" data-lang="en">REST API · Laravel · Team Lead</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" class="section section--tight" aria-labelledby="about-heading">
+      <div class="section__inner">
+        <h2 id="about-heading" class="section__title">
+          <span class="i18n-inline" data-lang="ru">Обо мне</span>
+          <span class="i18n-inline" data-lang="en">About</span>
+        </h2>
+        <div class="prose">
+          <p class="i18n-block" data-lang="ru">
+            Разрабатываю бэкенд на PHP, проектирую и сопровождаю REST API, работаю с Laravel. Участвую в управлении командой и технических
+            решениях.
+          </p>
+          <p class="i18n-block" data-lang="en">
+            I build PHP backends, design and maintain REST APIs, and work with Laravel. I contribute to team leadership and technical
+            decisions.
+          </p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3 class="about-card__label mono">
+              <span class="i18n-inline" data-lang="ru">Фокус</span>
+              <span class="i18n-inline" data-lang="en">Focus</span>
+            </h3>
+            <ul class="tag-list">
+              <li>REST API</li>
+              <li>Laravel</li>
+              <li>
+                <span class="i18n-inline" data-lang="ru">Управление командой</span>
+                <span class="i18n-inline" data-lang="en">Team management</span>
+              </li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <h3 class="about-card__label mono">
+              <span class="i18n-inline" data-lang="ru">Сейчас учу</span>
+              <span class="i18n-inline" data-lang="en">Currently learning</span>
+            </h3>
+            <p class="about-card__text">Go (Golang)</p>
+          </div>
+          <div class="about-card">
+            <h3 class="about-card__label mono">
+              <span class="i18n-inline" data-lang="ru">Отрасли</span>
+              <span class="i18n-inline" data-lang="en">Industries</span>
+            </h3>
+            <ul class="tag-list">
+              <li>E-commerce</li>
+              <li>
+                <span class="i18n-inline" data-lang="ru">Инжиниринг</span>
+                <span class="i18n-inline" data-lang="en">Engineering</span>
+              </li>
+              <li>SaaS</li>
+            </ul>
+          </div>
+        </div>
+        <div class="education">
+          <h3 class="education__heading">
+            <span class="i18n-inline" data-lang="ru">Образование</span>
+            <span class="i18n-inline" data-lang="en">Education</span>
+          </h3>
+          <article class="edu-card">
+            <p class="edu-card__meta mono">2022</p>
+            <h4 class="edu-card__title">
+              <span class="i18n-inline" data-lang="ru">MBA — интернет-маркетинг и e-commerce</span>
+              <span class="i18n-inline" data-lang="en">MBA — Internet Marketing &amp; E-Commerce</span>
+            </h4>
+            <p class="edu-card__place">
+              <span class="i18n-inline" data-lang="ru">РЭУ им. Г.В. Плеханова, Москва</span>
+              <span class="i18n-inline" data-lang="en">Plekhanov Russian University of Economics, Moscow</span>
+            </p>
+          </article>
+          <article class="edu-card">
+            <p class="edu-card__meta mono">2009</p>
+            <h4 class="edu-card__title">
+              <span class="i18n-inline" data-lang="ru">Специалист — прикладная космонавтика и фотограмметрия</span>
+              <span class="i18n-inline" data-lang="en">Specialist — Applied Cosmonautics &amp; Photogrammetry</span>
+            </h4>
+            <p class="edu-card__place">
+              <span class="i18n-inline" data-lang="ru"
+                >Московский государственный университет геодезии и картографии (МИИГАиК), Москва</span
+              >
+              <span class="i18n-inline" data-lang="en">Moscow State University of Geodesy and Cartography (MIIGAiK), Moscow</span>
+            </p>
+            <p class="edu-card__note">
+              <span class="i18n-inline" data-lang="ru">Информационные и телекоммуникационные системы и сети</span>
+              <span class="i18n-inline" data-lang="en">Information &amp; telecommunications systems and networks</span>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section" aria-labelledby="experience-heading">
+      <div class="section__inner">
+        <h2 id="experience-heading" class="section__title">
+          <span class="i18n-inline" data-lang="ru">Опыт</span>
+          <span class="i18n-inline" data-lang="en">Experience</span>
+        </h2>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__head">
+              <h3 class="timeline__company">ZiP Service</h3>
+              <p class="timeline__role">
+                <span class="i18n-inline" data-lang="ru">PHP-разработчик и тимлид</span>
+                <span class="i18n-inline" data-lang="en">PHP Developer &amp; Team Lead</span>
+              </p>
+              <p class="timeline__period mono">
+                <span class="i18n-inline" data-lang="ru">2020 — настоящее время</span>
+                <span class="i18n-inline" data-lang="en">2020 — present</span>
+              </p>
+            </div>
+            <ul class="tag-list tag-list--compact">
+              <li>PHP 8.4</li>
+              <li>Laravel 12</li>
+              <li>MariaDB</li>
+            </ul>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__head">
+              <h3 class="timeline__company">Opten Limited</h3>
+              <p class="timeline__role">
+                <span class="i18n-inline" data-lang="ru">Ведущий инженер</span>
+                <span class="i18n-inline" data-lang="en">Lead Engineer</span>
+              </p>
+              <p class="timeline__period mono">2008 — 2025</p>
+            </div>
+            <ul class="tag-list tag-list--compact">
+              <li>C++</li>
+              <li>C#</li>
+              <li>VBA for MicroStation</li>
+            </ul>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__head">
+              <h3 class="timeline__company">Poliaspect</h3>
+              <p class="timeline__role">
+                <span class="i18n-inline" data-lang="ru">Системный администратор</span>
+                <span class="i18n-inline" data-lang="en">System Administrator</span>
+              </p>
+              <p class="timeline__period mono">2007 — 2008</p>
+            </div>
+            <ul class="tag-list tag-list--compact">
+              <li>PHP</li>
+              <li>JavaScript</li>
+              <li>WordPress</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="stack" class="section section--tight" aria-labelledby="stack-heading">
+      <div class="section__inner">
+        <h2 id="stack-heading" class="section__title">
+          <span class="i18n-inline" data-lang="ru">Стек</span>
+          <span class="i18n-inline" data-lang="en">Stack</span>
+        </h2>
+        <div class="stack-grid">
+          <div class="stack-group">
+            <h3 class="stack-group__label mono">
+              <span class="i18n-inline" data-lang="ru">Языки</span>
+              <span class="i18n-inline" data-lang="en">Languages</span>
+            </h3>
+            <ul class="stack-list">
+              <li><span class="stack-k">PHP</span> <span class="stack-v mono">8.4</span> <span class="i18n-inline stack-note" data-lang="ru">основной</span><span class="i18n-inline stack-note" data-lang="en">primary</span></li>
+              <li><span class="stack-k">Go</span> <span class="i18n-inline stack-note" data-lang="ru">учу</span><span class="i18n-inline stack-note" data-lang="en">learning</span></li>
+              <li><span class="stack-k">JavaScript</span> <span class="i18n-inline stack-note" data-lang="ru">базово</span><span class="i18n-inline stack-note" data-lang="en">basic</span></li>
+              <li><span class="stack-k">SQL</span> <span class="i18n-inline stack-note" data-lang="ru">средне</span><span class="i18n-inline stack-note" data-lang="en">intermediate</span></li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 class="stack-group__label mono">
+              <span class="i18n-inline" data-lang="ru">Фреймворки</span>
+              <span class="i18n-inline" data-lang="en">Frameworks</span>
+            </h3>
+            <ul class="tag-list tag-list--wrap">
+              <li>Laravel</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 class="stack-group__label mono">API</h3>
+            <ul class="tag-list tag-list--wrap">
+              <li>REST API</li>
+              <li>GraphQL</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 class="stack-group__label mono">
+              <span class="i18n-inline" data-lang="ru">Серверы</span>
+              <span class="i18n-inline" data-lang="en">Servers</span>
+            </h3>
+            <ul class="tag-list tag-list--wrap">
+              <li>NGINX</li>
+              <li>FrankenPHP</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 class="stack-group__label mono">
+              <span class="i18n-inline" data-lang="ru">Базы данных</span>
+              <span class="i18n-inline" data-lang="en">Databases</span>
+            </h3>
+            <ul class="tag-list tag-list--wrap">
+              <li>MariaDB</li>
+              <li>MySQL</li>
+              <li>Redis</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 class="stack-group__label mono">
+              <span class="i18n-inline" data-lang="ru">Инструменты</span>
+              <span class="i18n-inline" data-lang="en">Tools</span>
+            </h3>
+            <ul class="tag-list tag-list--wrap">
+              <li>Docker</li>
+              <li>Composer</li>
+              <li>PHPUnit</li>
+              <li>Git</li>
+              <li>CI/CD</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 class="stack-group__label mono">
+              <span class="i18n-inline" data-lang="ru">Админки</span>
+              <span class="i18n-inline" data-lang="en">Admin panels</span>
+            </h3>
+            <ul class="tag-list tag-list--wrap">
+              <li>Backpack</li>
+              <li>Filament</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 class="stack-group__label mono">
+              <span class="i18n-inline" data-lang="ru">Поиск</span>
+              <span class="i18n-inline" data-lang="en">Search</span>
+            </h3>
+            <ul class="tag-list tag-list--wrap">
+              <li>Meilisearch</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 class="stack-group__label mono">
+              <span class="i18n-inline" data-lang="ru">Отладка и мониторинг</span>
+              <span class="i18n-inline" data-lang="en">Debugging &amp; monitoring</span>
+            </h3>
+            <ul class="tag-list tag-list--wrap">
+              <li>Sentry</li>
+              <li>GlitchTip</li>
+              <li>Clockwork</li>
+              <li>Bugreggator</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 class="stack-group__label mono">Frontend</h3>
+            <ul class="tag-list tag-list--wrap">
+              <li>Vue.js</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 class="stack-group__label mono">CMS</h3>
+            <ul class="tag-list tag-list--wrap">
+              <li>WordPress</li>
+              <li>OpenCart</li>
+              <li>MODX</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="learning" class="section section--tight" aria-labelledby="learning-heading">
+      <div class="section__inner">
+        <h2 id="learning-heading" class="section__title">
+          <span class="i18n-inline" data-lang="ru">Обучение</span>
+          <span class="i18n-inline" data-lang="en">Learning</span>
+        </h2>
+        <p class="prose learning__intro">
+          <span class="i18n-block" data-lang="ru">Параллельно углубляюсь в Go: синтаксис, стандартная библиотека, следующий шаг — REST API на Gin.</span>
+          <span class="i18n-block" data-lang="en">Deepening Go skills: syntax, standard library, next step — a REST API with Gin.</span>
+        </p>
+        <figure class="code-snippet">
+          <figcaption class="code-snippet__cap mono">learning.go</figcaption>
+          <pre class="code-snippet__pre" tabindex="0"><code><span class="tok-kw">package</span> main
+
+<span class="tok-kw">import</span> <span class="tok-str">"fmt"</span>
+
+<span class="tok-kw">type</span> LearningProgress <span class="tok-kw">struct</span> {
+    Status   <span class="tok-type">string</span>
+    Progress <span class="tok-type">int</span>
+    NextGoal <span class="tok-type">string</span>
+}
+
+<span class="tok-kw">func</span> <span class="tok-fn">main</span>() {
+    learning := LearningProgress{
+        Status:   <span class="tok-str">"Actively studying Go"</span>,
+        Progress: <span class="tok-num">35</span>, <span class="tok-comment">// %</span>
+        NextGoal: <span class="tok-str">"REST API with Gin"</span>,
+    }
+    fmt.Printf(<span class="tok-str">"%s — %d%%\n"</span>, learning.Status, learning.Progress)
+}</code></pre>
+        </figure>
+      </div>
+    </section>
+
+    <section id="contacts" class="section" aria-labelledby="contacts-heading">
+      <div class="section__inner">
+        <h2 id="contacts-heading" class="section__title">
+          <span class="i18n-inline" data-lang="ru">Контакты</span>
+          <span class="i18n-inline" data-lang="en">Contact</span>
+        </h2>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-list__label mono">Email</span>
+            <a href="mailto:iam@coolycow.com">iam@coolycow.com</a>
+          </li>
+          <li>
+            <span class="contact-list__label mono">GitHub</span>
+            <a href="https://github.com/coolycow" target="_blank" rel="noopener noreferrer">github.com/coolycow</a>
+          </li>
+          <li>
+            <span class="contact-list__label mono">LinkedIn</span>
+            <a href="https://linkedin.com/in/maxim-kulikov" target="_blank" rel="noopener noreferrer">linkedin.com/in/maxim-kulikov</a>
+          </li>
+          <li>
+            <span class="contact-list__label mono">Telegram</span>
+            <a href="https://t.me/coolycow" target="_blank" rel="noopener noreferrer">@coolycow</a>
+          </li>
+          <li>
+            <span class="contact-list__label mono">Web</span>
+            <a href="https://coolycow.com" target="_blank" rel="noopener noreferrer">coolycow.com</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__text mono">
+      <span class="i18n-inline" data-lang="ru">Собрано на HTML, CSS и немного JS</span>
+      <span class="i18n-inline" data-lang="en">Built with HTML, CSS, and a little JS</span>
+    </p>
+  </footer>
+
+  <div id="lang-live" class="visually-hidden" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
