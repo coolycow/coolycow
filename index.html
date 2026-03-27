@@ -58,6 +58,16 @@
             "Maxim Kulikov — PHP backend developer and team lead. REST API, Laravel, and team leadership."
           );
       }
+      var theme;
+      try {
+        theme = localStorage.getItem("theme");
+      } catch (e3) {}
+      if (theme !== "light" && theme !== "dark") {
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+      var tc = document.querySelector('meta[name="theme-color"]');
+      if (tc) tc.setAttribute("content", theme === "dark" ? "#121110" : "#f4f2ef");
     })();
   </script>
 </head>
@@ -101,9 +111,27 @@
           </li>
         </ul>
       </nav>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" class="lang-switch__btn" data-set-lang="ru" aria-pressed="true">RU</button>
-        <button type="button" class="lang-switch__btn" data-set-lang="en" aria-pressed="false">EN</button>
+      <div class="site-header__switches">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-switch__btn" data-set-lang="ru" aria-pressed="true">RU</button>
+          <button type="button" class="lang-switch__btn" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <p id="theme-switch-label" class="visually-hidden">
+          <span class="i18n-inline" data-lang="ru">Тема оформления</span>
+          <span class="i18n-inline" data-lang="en">Color theme</span>
+        </p>
+        <div class="theme-switch" role="group" aria-labelledby="theme-switch-label">
+          <button type="button" class="theme-switch__btn" data-set-theme="light" aria-pressed="false">
+            <span class="i18n-inline visually-hidden" data-lang="ru">Светлая</span>
+            <span class="i18n-inline visually-hidden" data-lang="en">Light</span>
+            <span aria-hidden="true">Lt</span>
+          </button>
+          <button type="button" class="theme-switch__btn" data-set-theme="dark" aria-pressed="false">
+            <span class="i18n-inline visually-hidden" data-lang="ru">Тёмная</span>
+            <span class="i18n-inline visually-hidden" data-lang="en">Dark</span>
+            <span aria-hidden="true">Dk</span>
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -475,6 +503,7 @@
   </footer>
 
   <div id="lang-live" class="visually-hidden" aria-live="polite"></div>
+  <div id="theme-live" class="visually-hidden" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>

@@ -15,6 +15,16 @@
     en: "Language: English",
   };
 
+  const THEME_COLORS = {
+    light: "#f4f2ef",
+    dark: "#121110",
+  };
+
+  const THEME_ANNOUNCE = {
+    ru: { light: "Тема: светлая", dark: "Тема: тёмная" },
+    en: { light: "Theme: light", dark: "Theme: dark" },
+  };
+
   function applyDocumentMeta(lang) {
     const m = META[lang] || META.ru;
     document.title = m.title;
@@ -27,6 +37,37 @@
       const l = btn.getAttribute("data-set-lang");
       btn.setAttribute("aria-pressed", l === lang ? "true" : "false");
     });
+  }
+
+  function announceTheme(theme) {
+    const lang = document.documentElement.lang === "en" ? "en" : "ru";
+    const live = document.getElementById("theme-live");
+    if (!live) return;
+    const msg = THEME_ANNOUNCE[lang][theme];
+    if (!msg) return;
+    live.textContent = msg;
+    setTimeout(() => {
+      live.textContent = "";
+    }, 1500);
+  }
+
+  function syncThemeButtons(theme) {
+    document.querySelectorAll(".theme-switch__btn").forEach((btn) => {
+      const t = btn.getAttribute("data-set-theme");
+      btn.setAttribute("aria-pressed", t === theme ? "true" : "false");
+    });
+  }
+
+  function setTheme(theme, { announce = false } = {}) {
+    if (theme !== "light" && theme !== "dark") return;
+    document.documentElement.setAttribute("data-theme", theme);
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (e) {}
+    const tc = document.querySelector('meta[name="theme-color"]');
+    if (tc) tc.setAttribute("content", THEME_COLORS[theme]);
+    syncThemeButtons(theme);
+    if (announce) announceTheme(theme);
   }
 
   function setLang(lang, { announce = false } = {}) {
@@ -57,6 +98,18 @@
       btn.addEventListener("click", () => {
         const next = btn.getAttribute("data-set-lang");
         if (next === "ru" || next === "en") setLang(next, { announce: true });
+      });
+    });
+  }
+
+  function initTheme() {
+    const cur = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    syncThemeButtons(cur);
+
+    document.querySelectorAll(".theme-switch__btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const next = btn.getAttribute("data-set-theme");
+        if (next === "light" || next === "dark") setTheme(next, { announce: true });
       });
     });
   }
@@ -104,6 +157,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     initLang();
+    initTheme();
     initNavHighlight();
     initNavScroll();
   });
